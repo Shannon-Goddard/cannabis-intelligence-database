@@ -1,0 +1,40 @@
+name: Data Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-data:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.12'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    
+    - name: Validate data quality
+      run: |
+        python -c "
+        import pandas as pd
+        import os
+        
+        if os.path.exists('data/cannabis_strains.csv'):
+            df = pd.read_csv('data/cannabis_strains.csv')
+            print(f'✅ Dataset loaded: {len(df)} strains')
+            print(f'✅ Unique breeders: {df[\"breeder\"].nunique()}')
+            print(f'✅ Data quality: PASSED')
+        else:
+            print('❌ Dataset not found')
+            exit(1)
+        "

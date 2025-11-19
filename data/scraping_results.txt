@@ -1,0 +1,208 @@
+CANNABIS INTELLIGENCE DATABASE - SCRAPING RESULTS
+============================================================
+
+WORKING SITES (47):
+----------------------------------------
+DJ Short: 27 strains (pagination)
+  URL: https://www.djgenetics.com/strains/
+
+Neville Schoenmakers / Sensi Seeds: 73 strains (collections)
+  URL: https://sensiseeds.com/en/research/
+
+Shantibaba: 101 strains (collections)
+  URL: https://shantibabaseeds.com/products/
+
+Mr. Nice Seedbank: 254 strains (collections)
+  URL: https://mrnice.com/product/
+
+Reeferman Seeds: 154 strains (pagination)
+  URL: https://reefermanseeds.com/cannabis-seeds/
+
+Soma Sacred Seeds: 43 strains (collections)
+  URL: https://www.somaseeds.nl/cannabis-seeds
+
+Serious Seeds: 64 strains (collections)
+  URL: https://www.seriousseeds.com/cannabis-seeds/
+
+Greenhouse Seeds: 229 strains (pagination)
+  URL: https://shop.greenhouseseeds.us/feminised-cannabis-seeds
+
+DNA Genetics / Reserva Privada: 542 strains (collections)
+  URL: https://dnagenetics.com/product/
+
+Crockett Family Farms: 78 strains (collections)
+  URL: https://crockettfamilyfarms.com/product/
+
+Jungle Boys: 2 strains (single_page)
+  URL: https://www.breedersdirectseedco.com/
+
+Karma Genetics: 91 strains (collections)
+  URL: https://karmagenetics.shop/product-category/
+
+Cannarado Genetics: 15 strains (pagination)
+  URL: https://radogear.com/products/seeds/
+
+Ethos Genetics: 371 strains (collections)
+  URL: https://brotanicalgardens.com/shop/ethos-genetics/
+
+Compound Genetics: 98 strains (collections)
+  URL: https://seeds.compound-genetics.com/products/
+
+Exotic Genetix: 81 strains (collections)
+  URL: https://exoticgenetix.com
+
+In House Genetics: 1 strains (ajax_load_more)
+  URL: https://inhousegenetics.com
+
+Seed Junky Genetics: 8 strains (single_page)
+  URL: https://seedjunkygenetics.com
+
+Doja Pak: 4 strains (pagination)
+  URL: https://dojapak.com
+
+CSI: Humboldt: 1 strains (single_page)
+  URL: https://csihumboldt.com
+
+Mephisto Genetics: 393 strains (collections)
+  URL: https://mephistogenetics.com
+
+Humboldt Seed Company: 83 strains (pagination)
+  URL: https://humboldtseedcompany.com
+
+Rare Dankness: 5 strains (collections)
+  URL: https://raredankness.com
+
+Brothers Grimm Seeds: 368 strains (collections)
+  URL: https://brothersgrimmseeds.com
+
+Archive Seed Bank: 47 strains (collections)
+  URL: https://archiveseedbank.com
+
+FastBuds: 153 strains (collections)
+  URL: https://2fast4buds.com
+
+Barney’s Farm: 239 strains (collections)
+  URL: https://barneysfarm.com
+
+Dutch Passion: 222 strains (collections)
+  URL: https://dutch-passion.com
+
+Sweet Seeds: 235 strains (collections)
+  URL: https://sweetseeds.com
+
+Royal Queen Seeds: 365 strains (collections)
+  URL: https://royalqueenseeds.com
+
+ACE Seeds: 2 strains (single_page)
+  URL: https://aceseeds.org
+
+Square One Genetics: 15 strains (pagination)
+  URL: https://squareonegenetics.com
+
+Grounded Genetics: 50 strains (pagination)
+  URL: https://groundedgenetics.com
+
+Bulletproof Genetics: 2 strains (single_page)
+  URL: https://bulletproofgenetics.com
+
+Connected Cannabis: 39 strains (pagination)
+  URL: https://connectedcannabisco.com
+
+Alien Labs: 168 strains (collections)
+  URL: https://alienlabs.org
+
+Paradise Seeds: 168 strains (collections)
+  URL: https://www.paradise-seeds.com
+
+World of Seeds: 168 strains (collections)
+  URL: https://www.worldofseeds.com
+
+Night Owl Seeds: 51 strains (collections)
+  URL: https://nightowlseeds.com
+
+Twisted Tree Autoflowers: 87 strains (collections)
+  URL: https://twistedtreeautoflowers.com
+
+Hypno Seeds: 316 strains (collections)
+  URL: https://hypnoseeds.com
+
+ILGM: 190 strains (collections)
+  URL: https://ilgm.com
+
+North Atlantic Seed Company: 375 strains (collections)
+  URL: https://www.northatlanticseed.com
+
+Atlas Seeds: 141 strains (collections)
+  URL: https://atlasseed.com
+
+Premium Cultivars: 338 strains (collections)
+  URL: https://premiumcultivars.com
+
+Seed Supreme: 313 strains (pagination)
+  URL: https://seedsupreme.com
+
+Pacific Seed Bank: 2 strains (single_page)
+  URL: https://www.pacificseedbank.com
+
+
+FAILING SITES (15) - NEED FIXES:
+----------------------------------------
+Cookies (Berner / Jigga): No strains found
+  URL: https://cookies.co
+
+Sherbinski: No strains found
+  URL: https://sherbinski.com
+
+Bodhi Seeds: No strains found
+  URL: https://bodhiseeds.com
+
+Oni Seed Co: No strains found
+  URL: https://oniseedco.com
+
+Relentless Genetics: No strains found
+  URL: https://relentlessgenetics.com
+
+Clearwater Genetics: Pattern detection failed
+  URL: https://clearwatergenetics.com
+  FIX: Complex site - might need specific seed catalog URL
+
+Bloom Seed Co: Pattern detection failed
+  URL: https://bloomseedco.com
+  FIX: Complex site - might need specific seed catalog URL
+
+Envy Genetics: No strains found
+  URL: https://envygenetics.com
+
+Sin City Seeds: No strains found
+  URL: https://sincityseeds.com
+
+Purple City Genetics: No strains found
+  URL: https://purplecitygenetics.com
+
+Holy Smoke Seeds: No strains found
+  URL: https://holysmokeseeds.com
+
+Farmhouse Genetics: Pattern detection failed
+  URL: https://farmhousegenetics.com
+  FIX: Complex site - might need specific seed catalog URL
+
+Phinest Cannabis: No strains found
+  URL: https://phinestcannabis.com
+
+Backpack Boyz: No strains found
+  URL: https://www.backpackboyz.com
+
+Seedsman: No strains found
+  URL: https://www.seedsman.com
+
+
+NO WEBSITE (0):
+----------------------------------------
+
+SUMMARY:
+----------------------------------------
+Working sites: 47
+Failing sites: 15
+No website: 0
+Success rate: 75.8%
+TOTAL STRAINS COLLECTED: 6,772

@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2025 Shannon Goddard
+Copyright (c) 2025 Shannon Goddard | Loyal9 LLC
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
