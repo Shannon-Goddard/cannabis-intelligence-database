@@ -1,0 +1,27 @@
+{
+  "title": "Cannabis Intelligence Database: Multi-Breeder Genetics Repository",
+  "description": "Comprehensive multi-breeder cannabis genetics repository containing 6,772 strain variations from 47 verified breeder sources. This dataset addresses a critical gap in cannabis research by maintaining breeder-specific genetic information rather than aggregating strains under generic names.",
+  "creators": [
+    {
+      "name": "Amazon Q."
+    },
+    {
+      "name": "Goddard, Shannon"
+    }
+  ],
+  "keywords": [
+    "cannabis",
+    "genetics", 
+    "cultivation",
+    "database",
+    "multi-breeder",
+    "research",
+    "dataset",
+    "agriculture",
+    "botany"
+  ],
+  "license": "MIT",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "language": "eng"
+}
