@@ -1,7 +1,7 @@
 # Cannabis Intelligence Database
 ## The Definitive Multi-Breeder Cannabis Genetics Repository
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.PENDING.svg)](https://doi.org/10.5281/zenodo.PENDING)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17645958.svg)](https://doi.org/10.5281/zenodo.17645958)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![Data Quality](https://img.shields.io/badge/strains-6772-brightgreen.svg)](https://github.com/Shannon-Goddard/cannabis-intelligence-database)
@@ -66,7 +66,7 @@ python scripts/analyze_data.py
   title = {Cannabis Intelligence Database: Multi-Breeder Genetics Repository},
   year = {2025},
   publisher = {Zenodo},
-  doi = {10.5281/zenodo.PENDING},
+  doi = {10.5281/zenodo.17645958},
   url = {https://github.com/Shannon-Goddard/cannabis-intelligence-database}
 }
 ```
