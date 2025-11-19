@@ -6,7 +6,7 @@
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
 [![Data Quality](https://img.shields.io/badge/strains-6772-brightgreen.svg)](https://github.com/Shannon-Goddard/cannabis-intelligence-database)
 
-**Authors:** Amazon Q. (2025), & Goddard, S.
+**Authors:** Amazon Q., & Goddard, S. (2025)
 
 ---
 
@@ -39,6 +39,10 @@ The Cannabis Intelligence Database represents the most comprehensive multi-breed
 4. **Ethos Genetics**: 371 strains
 5. **Brothers Grimm Seeds**: 368 strains
 
+## 🌐 Live Database Explorer
+
+**[View Interactive Database →](https://shannon-goddard.github.io/cannabis-intelligence-database/)**
+
 ## Quick Start
 
 ```bash
@@ -58,7 +62,7 @@ python scripts/analyze_data.py
 
 ```bibtex
 @dataset{goddard_cannabis_2025,
-  author = {Goddard, Shannon and Amazon Q.},
+  author = {Amazon Q. and Goddard, Shannon},
   title = {Cannabis Intelligence Database: Multi-Breeder Genetics Repository},
   year = {2025},
   publisher = {Zenodo},
