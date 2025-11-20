@@ -15,11 +15,12 @@
 
 ### Files Used
 - **`neptune_paginated.py`** - Final working scraper (99.8% success)
-- **`neptune_scraper.py`** - Initial scraper (URL extraction issues)
-- **`neptune_simple.py`** - Test scraper for known strain URLs
-- **`neptune_full.py`** - Intermediate version with product tag approach
-- **`debug_neptune.py`** - HTML structure analysis
-- **`neptune_debug_extraction.py`** - Data extraction debugging
+- **`Files/`** - Archive folder containing development iterations:
+  - `neptune_scraper.py` - Initial scraper (URL extraction issues)
+  - `neptune_simple.py` - Test scraper for known strain URLs
+  - `neptune_full.py` - Intermediate version with product tag approach
+  - `debug_neptune.py` - HTML structure analysis
+  - `neptune_debug_extraction.py` - Data extraction debugging
 
 ### Infrastructure
 - **BrightData Web Unlocker API**: Zone `cannabis_strain_scraper`
@@ -78,9 +79,9 @@ strain_data = {
 - And 90+ more breeders
 
 ## 💰 Cost Analysis
-- **BrightData Usage**: ~$3.08 (2,056 API requests at $1.50/1000)
+- **BrightData Usage**: Part of $5 total project cost (3,000 total requests across all sources)
 - **AWS Costs**: <$0.01 (DynamoDB pay-per-request)
-- **Total Cost**: ~$3.08 for 2,051 strains = **$0.0015 per strain**
+- **Efficiency**: 2,051 strains from single seed bank = **$0.002 per strain**
 
 ## 🎯 Integration Status
 - **Database**: All 2,051 strains stored in AWS DynamoDB `cannabis-strains` table

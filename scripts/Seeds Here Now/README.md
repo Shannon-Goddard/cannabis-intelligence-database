@@ -40,9 +40,9 @@ Successfully scraped **211 cannabis strains** from Seeds Here Now seed bank with
 - **Effects Description**
 
 ## 💰 Cost
-- **BrightData**: ~$0.32 (213 API requests)
+- **BrightData**: Part of $5 total project cost (3,000 total requests across all sources)
 - **AWS**: <$0.01 (DynamoDB storage)
-- **Total**: Under $0.50
+- **Efficiency**: 211 strains collected = **$0.002 per strain**
 
 ## 🚀 Usage
 ```bash
