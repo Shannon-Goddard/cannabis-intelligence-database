@@ -23,18 +23,24 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
     
-    - name: Validate data quality
+    - name: Validate API endpoints
       run: |
         python -c "
-        import pandas as pd
-        import os
+        import requests
+        import json
         
-        if os.path.exists('data/cannabis_strains.csv'):
-            df = pd.read_csv('data/cannabis_strains.csv')
-            print(f'✅ Dataset loaded: {len(df)} strains')
-            print(f'✅ Unique breeders: {df[\"breeder\"].nunique()}')
-            print(f'✅ Data quality: PASSED')
-        else:
-            print('❌ Dataset not found')
+        try:
+            # Test API stats endpoint
+            response = requests.get('https://api.loyal9.app/v1/stats', timeout=10)
+            if response.status_code == 200:
+                stats = response.json()
+                print(f'✅ API accessible: {stats.get(\"total_strains\", 0)} strains')
+                print(f'✅ Breeders: {stats.get(\"total_breeders\", 0)}')
+                print(f'✅ API validation: PASSED')
+            else:
+                print(f'❌ API returned status {response.status_code}')
+                exit(1)
+        except Exception as e:
+            print(f'❌ API validation failed: {e}')
             exit(1)
         "
