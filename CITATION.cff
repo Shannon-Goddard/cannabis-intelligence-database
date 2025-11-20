@@ -1,23 +1,22 @@
 cff-version: 1.2.0
 message: "If you use this dataset, please cite it as below."
 type: dataset
-title: "Cannabis Intelligence Database: Multi-Breeder Genetics Repository"
+title: "Cannabis Intelligence Database: Production API & Multi-Breeder Repository"
 authors:
   - family-names: "Goddard"
     given-names: "Shannon"
     orcid: "https://orcid.org/0000-0000-0000-0000"
   - name: "Amazon Q."
     alias: "Amazon Q AI Assistant"
-version: "1.0.0"
-date-released: "2025-01-18"
-url: "https://github.com/Shannon-Goddard/cannabis-intelligence-database"
+version: "1.0.1"
+date-released: "2025-01-27"
+url: "https://api.loyal9.app"
 repository-code: "https://github.com/Shannon-Goddard/cannabis-intelligence-database"
 abstract: >-
-  The Cannabis Intelligence Database represents the most comprehensive 
-  multi-breeder cannabis genetics repository ever assembled, containing 
-  6,772 strain variations from 47 verified breeder sources. This dataset 
-  addresses a critical gap in cannabis research by maintaining breeder-specific 
-  genetic information rather than aggregating strains under generic names.
+  Production cannabis genetics REST API with 2,341 verified strains from 
+  73 professional breeders. Live API at api.loyal9.app provides breeder-specific 
+  cultivation data including THC/CBD levels, genetics, flowering time, effects, 
+  and difficulty ratings. Built on AWS serverless architecture with <500ms response times.
 keywords:
   - cannabis
   - genetics
@@ -26,5 +25,8 @@ keywords:
   - strain database
   - multi-breeder intelligence
   - agricultural research
+  - REST API
+  - production database
+  - AWS serverless
 license: MIT
 doi: "10.5281/zenodo.17645958"

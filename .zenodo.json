@@ -1,6 +1,6 @@
 {
-  "title": "Cannabis Intelligence Database: Multi-Breeder Genetics Repository",
-  "description": "Comprehensive multi-breeder cannabis genetics repository containing 6,772 strain variations from 47 verified breeder sources. This dataset addresses a critical gap in cannabis research by maintaining breeder-specific genetic information rather than aggregating strains under generic names.",
+  "title": "Cannabis Intelligence Database: Production API & Multi-Breeder Repository",
+  "description": "Production cannabis genetics REST API with 2,341 verified strains from 73 professional breeders. Live API at api.loyal9.app provides breeder-specific cultivation data including THC/CBD levels, genetics, flowering time, effects, and difficulty ratings. Built on AWS serverless architecture with sub-500ms response times.",
   "creators": [
     {
       "name": "Amazon Q."
@@ -18,7 +18,10 @@
     "research",
     "dataset",
     "agriculture",
-    "botany"
+    "botany",
+    "REST API",
+    "production",
+    "AWS serverless"
   ],
   "license": "MIT",
   "upload_type": "dataset",

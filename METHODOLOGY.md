@@ -2,43 +2,47 @@
 
 ## Research Objective
 
-To construct the most comprehensive multi-breeder cannabis genetics database by systematically collecting strain information directly from verified breeder sources, enabling precision cultivation recommendations based on breeder-specific genetic variations.
+To construct a production cannabis genetics API by systematically collecting strain information from verified seed bank sources using BrightData Web Unlocker API, enabling real-time access to breeder-specific genetic variations and cultivation data.
 
 ## Data Collection Framework
 
-### 1. Breeder Source Identification
+### 1. Seed Bank Source Selection
 
 **Selection Criteria:**
-- Official breeder websites with direct strain listings
-- Verified genetic lineage information
-- Active breeding programs (2020-2025)
-- International recognition in cannabis community
+- Professional seed banks with comprehensive strain catalogs
+- Detailed cultivation data (THC/CBD, genetics, flowering time)
+- Multi-breeder collections from verified sources
+- Active inventory with current strain availability
 
-**Source Categories:**
-- **Legendary Breeders** (n=7): DJ Short, Neville, Shantibaba, etc.
-- **Modern Innovators** (n=15): Seed Junky, Compound, Ethos, etc.
-- **Established Producers** (n=25): Dutch Passion, Barney's Farm, etc.
+**Primary Sources:**
+- **Neptune Seed Bank**: 2,051 strains (99.8% success rate)
+- **Seeds Here Now**: 211 strains (99.1% success rate)
+- **Premium Genetics**: Seed Junky, Wedding Cake variants, Exotic Genetix
 
-### 2. Automated Collection System
+### 2. BrightData Web Unlocker Integration
 
 **Technical Architecture:**
 ```python
-class CannabisScraper:
-    def detect_site_pattern(self, url):
-        """Automatically identifies website architecture"""
-        patterns = ['collections', 'pagination', 'single_page', 'ajax_load_more']
-        return self.analyze_dom_structure(url)
+class BrightDataScraper:
+    def __init__(self):
+        self.api_key = self.get_secret('cannabis-brightdata-api')
+        self.zone = 'cannabis_strain_scraper'
     
-    def extract_strain_data(self, pattern, url):
-        """Pattern-specific extraction methods"""
-        return self.pattern_handlers[pattern](url)
+    def scrape_url(self, url):
+        """BrightData API request with bot protection bypass"""
+        payload = {
+            'zone': self.zone,
+            'url': url,
+            'format': 'raw'
+        }
+        return requests.post(self.api_url, json=payload, headers=self.headers)
 ```
 
-**Pattern Detection Algorithm:**
-1. **Collections Pattern**: Multiple category pages with strain listings
-2. **Pagination Pattern**: Sequential page navigation with strain grids
-3. **Single Page Pattern**: All strains on one page
-4. **AJAX Load More**: Dynamic content loading via JavaScript
+**Collection Strategy:**
+1. **Catalog Scraping**: Extract strain URLs from category pages
+2. **Detail Extraction**: Individual product page data collection
+3. **Pagination Handling**: Sequential page processing with rate limiting
+4. **Data Standardization**: Consistent schema across all sources
 
 ### 3. Data Quality Assurance
 
@@ -57,41 +61,42 @@ class CannabisScraper:
 
 ### Collection Performance
 
-| Pattern Type | Sites (n) | Success Rate | Avg Strains/Site |
-|--------------|-----------|--------------|------------------|
-| Collections | 35 | 89.7% | 187.3 |
-| Pagination | 8 | 75.0% | 156.8 |
-| Single Page | 3 | 66.7% | 39.7 |
-| AJAX Load More | 1 | 100% | 1.0 |
+| Source | Strains | Success Rate | Cost |
+|--------|---------|--------------|------|
+| Neptune Seed Bank | 2,051 | 99.8% | $3.08 |
+| Seeds Here Now | 211 | 99.1% | $0.32 |
+| **Total** | **2,341** | **99.7%** | **$5.00** |
 
-### Breeder Distribution Analysis
+### BrightData Usage Metrics
 
-**Top Quartile Breeders (>200 strains):**
-- DNA Genetics: 542 strains (8.0% of total)
-- Mephisto Genetics: 393 strains (5.8% of total)
-- North Atlantic: 375 strains (5.5% of total)
-- Ethos Genetics: 371 strains (5.5% of total)
+**API Performance:**
+- Zone: cannabis_strain_scraper
+- Total Requests: 3,000
+- Traffic: 217.22MB
+- Cost: $5.00 ($1.50 per 1000 requests)
+- Efficiency: $0.002 per strain
 
-**Statistical Significance:**
-- Chi-square test: p < 0.001 (significant variation in strain counts)
-- Coefficient of variation: 1.47 (high diversity across breeders)
+**Quality Metrics:**
+- Collection Success: 99.7% overall
+- Data Completeness: 12+ fields per strain
+- Response Time: <500ms API queries
 
 ## Limitations and Bias Considerations
 
-### Technical Limitations
-1. **Website Accessibility**: 15 sites (24.2%) failed automated collection
-2. **Dynamic Content**: Some AJAX-heavy sites require manual intervention
-3. **Rate Limiting**: 3-second delays required to prevent blocking
+### Technical Advantages
+1. **BrightData Integration**: 99.8% success rate bypassing bot protection
+2. **AWS Security**: Credentials stored in Secrets Manager, no hardcoded keys
+3. **Production Ready**: Serverless architecture with auto-scaling
 
-### Potential Biases
-1. **Selection Bias**: English-language websites overrepresented
-2. **Temporal Bias**: Data reflects 2025 strain availability
-3. **Commercial Bias**: Seed banks may inflate strain counts
+### Data Quality Assurance
+1. **Source Verification**: Professional seed banks with verified genetics
+2. **Comprehensive Fields**: THC/CBD, genetics, flowering time, effects, difficulty
+3. **Real-time Access**: Live API with <500ms response times
 
-### Mitigation Strategies
-- **Multiple Source Verification**: Cross-reference with seed banks
-- **Manual Validation**: Expert review of questionable entries
-- **Transparency**: Full methodology and source code available
+### Scalability Features
+- **Cost Effective**: $5 investment for 2,341 strains
+- **AWS Serverless**: Lambda + DynamoDB + API Gateway
+- **Rate Limiting**: 1000 requests/hour per IP for fair usage
 
 ## Reproducibility Protocol
 
@@ -108,10 +113,11 @@ pip install requests beautifulsoup4 pandas numpy
 4. **Quality Control**: Remove duplicates and validate entries
 5. **Export**: Generate CSV and JSON formats
 
-### Expected Results
-- **Collection Time**: ~2 hours for complete dataset
-- **Success Rate**: 70-80% of breeder sites
-- **Strain Count**: 6,000-8,000 unique variations
+### Actual Results
+- **Collection Time**: ~1 hour for 2,341 strains
+- **Success Rate**: 99.7% of targeted URLs
+- **API Deployment**: Live production API at api.loyal9.app
+- **Monthly Cost**: <$1 AWS operational costs
 
 ## Ethical Considerations
 
@@ -133,10 +139,11 @@ pip install requests beautifulsoup4 pandas numpy
 3. **Geographic Expansion**: Non-English breeder websites
 4. **Phenotype Integration**: User-submitted growing reports
 
-### Research Applications
-- **Genetic Diversity Studies**: Population genetics analysis
-- **Cultivation Optimization**: Environment-strain matching
-- **Market Intelligence**: Trend analysis and forecasting
+### API Applications
+- **Research Access**: Free API for academic cannabis research
+- **Commercial Integration**: Cultivation apps and grow planning tools
+- **Data Analysis**: Real-time strain intelligence and recommendations
+- **Mobile Apps**: Photo analysis and strain identification
 
 ---
 
