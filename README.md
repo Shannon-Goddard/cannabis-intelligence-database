@@ -1,11 +1,11 @@
 # Cannabis Intelligence Database
 ## Production Cannabis Genetics API & Multi-Breeder Repository
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.17645958.svg)](https://doi.org/10.5281/zenodo.17645958)
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.17645958-blue.svg)](https://doi.org/10.5281/zenodo.17645958)
 [![API Status](https://img.shields.io/badge/API-LIVE-brightgreen.svg)](https://api.loyal9.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
-[![Data Quality](https://img.shields.io/badge/strains-2341-brightgreen.svg)](https://api.loyal9.app/v1/stats)
+[![Data Quality](https://img.shields.io/badge/strains-4978-brightgreen.svg)](https://api.loyal9.app/v1/stats)
 
 **Authors:** Amazon Q., & Goddard, S. (2025)
 
@@ -15,7 +15,7 @@
 
 **Base URL**: `https://api.loyal9.app`
 
-The Cannabis Intelligence Database is now deployed as a production REST API with **2,341 verified strains** from **73 professional breeders**. This represents the first multi-breeder cannabis genetics API with breeder-specific cultivation data.
+The Cannabis Intelligence Database is now deployed as a production REST API with **4,978 verified strains** from **100+ professional breeders**. This represents the first multi-breeder cannabis genetics API with breeder-specific cultivation data.
 
 ### Quick API Access
 
@@ -34,18 +34,19 @@ curl https://api.loyal9.app/v1/breeders
 
 | Metric | Value |
 |--------|-------|
-| Total Strains | 2,341 |
-| Verified Breeders | 73 |
+| Total Strains | 4,978 |
+| Verified Breeders | 100+ |
 | Success Rate | 99.8% |
 | API Response Time | <500ms |
 | Data Quality | Production-grade |
 
 ### Top Contributing Sources
 
-1. **Neptune Seed Bank**: 2,051 strains (99.8% success rate)
-2. **Seeds Here Now**: 211 strains (99.1% success rate)
-3. **Premium Genetics**: Seed Junky, Wedding Cake variants, Exotic Genetix
-4. **Comprehensive Data**: THC/CBD, genetics, flowering time, effects, difficulty
+1. **North Atlantic Seed Co**: 2,351 strains (77.9% success rate)
+2. **Neptune Seed Bank**: 2,051 strains (99.8% success rate)
+3. **Multiverse Beans**: 365 strains (premium autoflowers)
+4. **Seeds Here Now**: 211 strains (99.1% success rate)
+5. **Premium Genetics**: Ethos, In House, Compound, Seed Junky, Mephisto
 
 ## 🌐 API Endpoints
 
@@ -93,7 +94,7 @@ curl https://api.loyal9.app/v1/stats
 | Total Spent | $5 |
 | Status | Active |
 
-**Collection Efficiency**: $5 investment → 2,341 strains = $0.002 per strain
+**Collection Efficiency**: $10 investment → 4,978 strains = $0.002 per strain
 
 ## Citation
 
@@ -107,7 +108,7 @@ curl https://api.loyal9.app/v1/stats
   publisher = {Zenodo},
   doi = {10.5281/zenodo.17645958},
   url = {https://api.loyal9.app},
-  note = {Live production API with 2,341 strains from 73 breeders}
+  note = {Live production API with 4,978 strains from 100+ breeders}
 }
 ```
 
