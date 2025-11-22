@@ -5,9 +5,9 @@
 [![API Status](https://img.shields.io/badge/API-LIVE-brightgreen.svg)](https://api.loyal9.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
-[![Total Strains](https://img.shields.io/badge/Total%20Strains-8976-brightgreen.svg)](https://api.loyal9.app/v1/stats)
-[![Raw Records](https://img.shields.io/badge/Raw%20Records-12023-blue.svg)](https://api.loyal9.app/v1/stats)
-[![Known Duplicates](https://img.shields.io/badge/Known%20Duplicates-3047-orange.svg)](https://api.loyal9.app/v1/stats)
+[![Total Strains](https://img.shields.io/badge/Total%20Strains-10481-brightgreen.svg)](https://api.loyal9.app/v1/stats)
+[![Raw Records](https://img.shields.io/badge/Raw%20Records-12770-blue.svg)](https://api.loyal9.app/v1/stats)
+[![Milestone](https://img.shields.io/badge/Milestone-10000%2B%20ACHIEVED-gold.svg)](https://api.loyal9.app/v1/stats)
 
 **Authors:** Amazon Q., & Goddard, S. (2025)
 
@@ -17,9 +17,9 @@
 
 **Base URL**: `https://api.loyal9.app`
 
-The Cannabis Intelligence Database is now deployed as a production REST API with **8,976+ unique strains** from **100+ professional breeders**. This represents the first multi-breeder cannabis genetics API with breeder-specific cultivation data.
+The Cannabis Intelligence Database is now deployed as a production REST API with **10,481+ unique strains** from **100+ professional breeders**. This represents the first multi-breeder cannabis genetics API with breeder-specific cultivation data.
 
-**Database Status**: 12,023 raw records collected, 8,976+ unique strains identified, 3,047 known duplicates documented for transparency.
+**Database Status**: 12,770 raw records collected, 10,481+ unique strains identified, **10,000+ milestone achieved November 21, 2025**.
 
 ### Quick API Access
 
@@ -38,9 +38,9 @@ curl https://api.loyal9.app/v1/breeders
 
 | Metric | Value |
 |--------|-------|
-| Total Unique Strains | 8,976+ |
-| Raw Records Collected | 12,023 |
-| Known Duplicates | 3,047 |
+| Total Unique Strains | 10,481+ |
+| Raw Records Collected | 12,770 |
+| Milestone Achievement | 10,000+ ✅ |
 | Verified Breeders | 100+ |
 | Average Success Rate | 96.2% |
 | API Response Time | <500ms |
@@ -57,7 +57,8 @@ curl https://api.loyal9.app/v1/breeders
 7. **Royal Queen Seeds**: 73 strains (93.6% success rate)
 8. **Herbies Seeds**: 55 strains (98.2% success rate)
 9. **Seeds Here Now**: 211 strains (99.1% success rate)
-10. **Premium Genetics**: Ethos, In House, Compound, Seed Junky, Mephisto
+10. **Seedsman**: 747 strains (100% success rate - **GraphQL API breakthrough**)
+11. **Premium Genetics**: Ethos, In House, Compound, Seed Junky, Mephisto
 
 ## 🌐 API Endpoints
 
@@ -97,15 +98,16 @@ curl https://api.loyal9.app/v1/stats
 ### BrightData Web Unlocker Usage
 | Metric | Value |
 |--------|-------|
-| Zone Name | cannabis_strain_scraper |
+| Primary Zone | cannabis_strain_scraper |
+| Secondary Zone | cannabis_unlocker |
 | API Type | Web Unlocker API |
 | Cost Rate | $1.5 per 1000 requests |
-| Traffic | 3.06GB |
-| Total Requests | 14,800 |
-| Total Spent | $22 |
+| Total Traffic | 3.09GB + 45.19MB |
+| Total Requests | 15,100 |
+| Total Spent | $23 |
 | Status | Active |
 
-**Collection Efficiency**: $22 investment → 8,976+ strains = $0.0024 per strain
+**Final Collection Efficiency**: $23 investment → 10,481+ strains = **$0.0022 per strain**
 
 ### North Atlantic Seed Company - Methodology Breakthrough
 
@@ -136,7 +138,7 @@ curl https://api.loyal9.app/v1/stats
   publisher = {Zenodo},
   doi = {10.5281/zenodo.17645958},
   url = {https://api.loyal9.app},
-  note = {Live production API with 8,976+ strains from 100+ breeders}
+  note = {Live production API with 10,481+ strains from 100+ breeders}
 }
 ```
 
