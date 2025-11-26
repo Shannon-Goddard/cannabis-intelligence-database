@@ -289,7 +289,9 @@
   </div>
 
   <p style="text-align:center; margin-top: 20px; font-size: 0.9rem; color: #888;">
-    Data auto-loaded from <code>https://api.loyal9.app/v1/strains</code> • Updated in real time
+    Data auto-loaded from <code>https://api.loyal9.app/v1/strains</code> 
+  </p>
+</main>
   </p>
 </main>
 
@@ -413,51 +415,75 @@
             <p>Built with precision. Designed for science. Made for the future of cannabis research.</p>
         </footer>
     </div>
+
+    <script>
     $(document).ready(async function() {
-  try {
-    const response = await fetch('https://api.loyal9.app/v1/strains');
-    const data = await response.json();
-    const strains = data.strains || data;
+      try {
+        let response, data, strains = [];
+        
+        try {
+          response = await fetch('https://api.loyal9.app/v1/strains');
+          if (!response.ok) throw new Error(`API Error: ${response.status}`);
+          data = await response.json();
+        } catch (apiError) {
+          console.log('Primary API failed:', apiError);
+          response = await fetch('https://api.loyal9.app/v1/stats');
+          data = await response.json();
+        }
+        
+        if (Array.isArray(data)) {
+          strains = data;
+        } else if (data.data) {
+          strains = data.data;
+        } else if (data.strains) {
+          strains = data.strains;
+        } else if (data.Items) {
+          strains = data.Items;
+        } else {
+          console.log('API Response:', data);
+          $('#strainsTable tbody').html(`<tr><td colspan="8">API returned: ${JSON.stringify(data).substring(0, 200)}...</td></tr>`);
+          return;
+        }
 
-    // Populate breeder dropdown
-    const breeders = [...new Set(strains.map(s => s.breeder_name || s.breeder).filter(b => b))].sort();
-    breeders.forEach(breeder => {
-      $('#breederFilter').append(`<option value="${breeder}">${breeder}</option>`);
+        if (!Array.isArray(strains) || strains.length === 0) {
+          $('#strainsTable tbody').html('<tr><td colspan="8">No strain data available</td></tr>');
+          return;
+        }
+
+        const breeders = [...new Set(strains.map(s => s.breeder_name || s.breeder || 'Unknown').filter(b => b && b !== 'Unknown'))].sort();
+        breeders.forEach(breeder => {
+          $('#breederFilter').append(`<option value="${breeder}">${breeder}</option>`);
+        });
+
+        const table = $('#strainsTable').DataTable({
+          data: strains,
+          columns: [
+            { data: 'strain_name', defaultContent: 'N/A' },
+            { data: 'breeder_name', defaultContent: 'Unknown' },
+            { data: 'type', defaultContent: 'N/A' },
+            { data: 'thc_content', defaultContent: 'N/A' },
+            { data: 'cbd_content', defaultContent: 'N/A' },
+            { data: 'flowering_time', defaultContent: 'N/A' },
+            { data: 'difficulty', defaultContent: 'N/A' },
+            { data: 'effects', defaultContent: 'N/A' }
+          ],
+          pageLength: 5,
+          order: [[0, 'asc']]
+        });
+
+        $('#searchInput').on('keyup', function() {
+          table.search(this.value).draw();
+        });
+
+        $('#breederFilter').on('change', function() {
+          table.column(1).search(this.value).draw();
+        });
+
+      } catch (error) {
+        console.error('Error:', error);
+        $('#strainsTable tbody').html(`<tr><td colspan="8">Error: ${error.message}</td></tr>`);
+      }
     });
-
-    // Initialize DataTable
-    const table = $('#strainsTable').DataTable({
-      data: strains,
-      columns: [
-        { data: 'strain_name', defaultContent: 'N/A' },
-        { data: 'breeder_name', defaultContent: 'Unknown' },
-        { data: 'type', defaultContent: 'N/A' },
-        { data: 'thc_content', defaultContent: 'N/A' },
-        { data: 'cbd_content', defaultContent: 'N/A' },
-        { data: 'flowering_time', defaultContent: 'N/A' },
-        { data: 'difficulty', defaultContent: 'N/A' },
-        { data: 'effects', defaultContent: 'N/A' }
-      ],
-      pageLength: 25,
-      order: [[0, 'asc']],
-      language: { processing: "Loading 15,779+ strains..." }
-    });
-
-    // Custom search
-    $('#searchInput').on('keyup', function() {
-      table.search(this.value).draw();
-    });
-
-    // Breeder filter
-    $('#breederFilter').on('change', function() {
-      table.column(1).search(this.value).draw();
-    });
-
-  } catch (error) {
-    console.error('Error loading data:', error);
-    $('#strainsTable tbody').html('<tr><td colspan="8">Error loading data</td></tr>');
-  }
-});
-</script>
+    </script>
 </body>
 </html>
