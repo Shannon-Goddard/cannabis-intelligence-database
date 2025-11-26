@@ -11,6 +11,11 @@
     <meta property="og:description" content="10,481+ unique strains from 100+ breeders - Live production API for cannabis genetics">
     <meta property="og:type" content="website">
     
+    <!-- jQuery + DataTables -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+
     <style>
         * {
             margin: 0;
@@ -236,7 +241,7 @@
     <div class="container">
         <header class="header">
             <h1>🌿 Cannabis Intelligence Database</h1>
-            <p class="subtitle">10,481+ Unique Strains | 10,000+ Milestone Achieved | 100% Success Rate</p>
+            <p class="subtitle">15,779+ Unique Strains | 10,000+ Milestone CRUSHED | 99.5% Success Rate</p>
             
             <div class="badges">
                 <a href="https://doi.org/10.5281/zenodo.17645958" class="badge">📚 DOI: 10.5281/zenodo.17645958</a>
@@ -247,17 +252,59 @@
         </header>
 
         <main class="main-content">
+  <h2 style="text-align:center; margin-bottom: 20px;">🌿 15,000+ Strains • Fully Searchable & Filterable</h2>
+  <p style="text-align:center; margin-bottom: 30px; color: #555;">
+    Search by name • Filter by breeder • Sort THC, flowering time, type • Click headers
+  </p>
+
+  <!-- Live Search + Breeder Filter -->
+  <div style="margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+    <input type="text" id="searchInput" placeholder="🔍 Search strain name..." style="padding: 12px; width: 300px; max-width: 100%; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
+    
+    <select id="breederFilter" style="padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
+      <option value="">All Breeders (150+)</option>
+      <!-- JS will populate this -->
+    </select>
+  </div>
+
+  <!-- The Beast Table -->
+  <div style="overflow-x: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    <table id="strainsTable" class="display responsive nowrap" width="100%">
+      <thead style="background: #667eea; color: white;">
+        <tr>
+          <th>Strain Name</th>
+          <th>Breeder</th>
+          <th>Type</th>
+          <th>THC %</th>
+          <th>CBD %</th>
+          <th>Flowering (days)</th>
+          <th>Difficulty</th>
+          <th>Effects</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- JS fills this with your full dataset -->
+      </tbody>
+    </table>
+  </div>
+
+  <p style="text-align:center; margin-top: 20px; font-size: 0.9rem; color: #888;">
+    Data auto-loaded from <code>https://api.loyal9.app/v1/strains</code> • Updated in real time
+  </p>
+</main>
+
+        <main class="main-content">
             <h2>🎯 Research Overview</h2>
-            <p>The Cannabis Intelligence Database is now deployed as a <strong>production REST API</strong> with <strong>10,481+ unique strains</strong> from 100+ professional breeders. This represents the first multi-breeder cannabis genetics API with breeder-specific cultivation data available at <a href="https://api.loyal9.app" style="color: #667eea; font-weight: bold;">api.loyal9.app</a>.</p>
+            <p>The Cannabis Intelligence Database is now deployed as a <strong>production REST API</strong> with <strong>15,779+ unique strains</strong> from 200+ professional breeders. This represents the first multi-breeder cannabis genetics API with breeder-specific cultivation data available at <a href="https://api.loyal9.app" style="color: #667eea; font-weight: bold;">api.loyal9.app</a>.</p>
             <p style="margin-top: 15px; padding: 15px; background: #e8f5e8; border-radius: 8px; border-left: 4px solid #4CAF50;"><strong>🏆 Methodology Breakthrough:</strong> Achieved <strong>100% success rate</strong> on North Atlantic Seed Company re-scrape using 4-method extraction approach, collecting 3,047 strains with zero failures.</p>
 
             <div class="stats-grid">
                 <div class="stat-card">
-                    <span class="stat-number">10,481+</span>
+                    <span class="stat-number">15,779+</span>
                     <span class="stat-label">Unique Strains</span>
                 </div>
                 <div class="stat-card">
-                    <span class="stat-number">100+</span>
+                    <span class="stat-number">200+</span>
                     <span class="stat-label">Verified Breeders</span>
                 </div>
                 <div class="stat-card">
@@ -273,6 +320,10 @@
             <div class="top-breeders">
                 <h3>🏆 Top Data Sources</h3>
                 <ul class="breeder-list">
+                    <li class="breeder-item">
+                        <span class="breeder-name">The Attitude Seed Bank</span>
+                        <span class="strain-count">7,705 strains (99.5% success)</span>
+                    </li>
                     <li class="breeder-item">
                         <span class="breeder-name">North Atlantic Seed Co</span>
                         <span class="strain-count">3,047 strains (100% success)</span>
@@ -362,5 +413,51 @@
             <p>Built with precision. Designed for science. Made for the future of cannabis research.</p>
         </footer>
     </div>
+    $(document).ready(async function() {
+  try {
+    const response = await fetch('https://api.loyal9.app/v1/strains');
+    const data = await response.json();
+    const strains = data.strains || data;
+
+    // Populate breeder dropdown
+    const breeders = [...new Set(strains.map(s => s.breeder_name || s.breeder).filter(b => b))].sort();
+    breeders.forEach(breeder => {
+      $('#breederFilter').append(`<option value="${breeder}">${breeder}</option>`);
+    });
+
+    // Initialize DataTable
+    const table = $('#strainsTable').DataTable({
+      data: strains,
+      columns: [
+        { data: 'strain_name', defaultContent: 'N/A' },
+        { data: 'breeder_name', defaultContent: 'Unknown' },
+        { data: 'type', defaultContent: 'N/A' },
+        { data: 'thc_content', defaultContent: 'N/A' },
+        { data: 'cbd_content', defaultContent: 'N/A' },
+        { data: 'flowering_time', defaultContent: 'N/A' },
+        { data: 'difficulty', defaultContent: 'N/A' },
+        { data: 'effects', defaultContent: 'N/A' }
+      ],
+      pageLength: 25,
+      order: [[0, 'asc']],
+      language: { processing: "Loading 15,779+ strains..." }
+    });
+
+    // Custom search
+    $('#searchInput').on('keyup', function() {
+      table.search(this.value).draw();
+    });
+
+    // Breeder filter
+    $('#breederFilter').on('change', function() {
+      table.column(1).search(this.value).draw();
+    });
+
+  } catch (error) {
+    console.error('Error loading data:', error);
+    $('#strainsTable tbody').html('<tr><td colspan="8">Error loading data</td></tr>');
+  }
+});
+</script>
 </body>
 </html>
