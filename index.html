@@ -252,57 +252,59 @@
         </header>
 
         <main class="main-content">
-  <h2 style="text-align:center; margin-bottom: 20px;">🌿 15,000+ Strains • Fully Searchable & Filterable</h2>
-  <p style="text-align:center; margin-bottom: 30px; color: #555;">
-    Search by name • Filter by breeder • Sort THC, flowering time, type • Click headers
-  </p>
+            <h2 style="text-align:center; margin-bottom: 20px;">🌿 15,768 Strains • Fully Searchable & Filterable</h2>
+            <p style="text-align:center; margin-bottom: 30px; color: #555;">
+                Search by name • Filter by breeder • Sort THC, flowering time, type • Click headers
+            </p>
 
-  <!-- Live Search + Breeder Filter -->
-  <div style="margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-    <input type="text" id="searchInput" placeholder="🔍 Search strain name..." style="padding: 12px; width: 300px; max-width: 100%; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
-    
-    <select id="breederFilter" style="padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
-      <option value="">All Breeders (150+)</option>
-      <!-- JS will populate this -->
-    </select>
-  </div>
+            <!-- Live Search + Breeder Filter -->
+            <div style="margin-bottom: 20px; display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+                <input type="text" id="searchInput" placeholder="🔍 Search strain name..." style="padding: 12px; width: 300px; max-width: 100%; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
+                
+                <select id="breederFilter" style="padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size: 1rem;">
+                    <option value="">All Breeders (200+)</option>
+                    <!-- JS will populate this -->
+                </select>
+            </div>
 
-  <!-- The Beast Table -->
-  <div style="overflow-x: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-    <table id="strainsTable" class="display responsive nowrap" width="100%">
-      <thead style="background: #667eea; color: white;">
-        <tr>
-          <th>Strain Name</th>
-          <th>Breeder</th>
-          <th>Genetics</th>
-          <th>THC %</th>
-          <th>CBD %</th>
-          <th>Flowering</th>
-          <th>Difficulty</th>
-          <th>Effects</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- JS fills this with your full dataset -->
-      </tbody>
-    </table>
-  </div>
+            <!-- The Beast Table -->
+            <div style="overflow-x: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                <table id="strainsTable" class="display responsive nowrap" width="100%">
+                    <thead style="background: #667eea; color: white;">
+                        <tr>
+                            <th>Strain Name</th>
+                            <th>Breeder</th>
+                            <th>Genetics</th>
+                            <th>THC %</th>
+                            <th>CBD %</th>
+                            <th>Flowering</th>
+                            <th>Difficulty</th>
+                            <th>Effects</th>
+                            <th>Flavors</th>
+                            <th>Type</th>
+                            <th>Yield</th>
+                            <th>Height</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- JS fills this with your full dataset -->
+                    </tbody>
+                </table>
+            </div>
 
-  <p style="text-align:center; margin-top: 20px; font-size: 0.9rem; color: #888;">
-    Data auto-loaded from <code>https://api.loyal9.app/v1/strains</code> 
-  </p>
-</main>
-  </p>
-</main>
+            <p style="text-align:center; margin-top: 20px; font-size: 0.9rem; color: #888;">
+                Data loaded from production database • 15,768 strains with AI-extracted intelligence
+            </p>
+        </main>
 
         <main class="main-content">
             <h2>🎯 Research Overview</h2>
-            <p>The Cannabis Intelligence Database is now deployed as a <strong>production REST API</strong> with <strong>15,768 unique strains</strong> from 200+ professional breeders with <strong>8,792 AI-extracted data points</strong>. This represents the first multi-breeder cannabis genetics API with breeder-specific cultivation data available at <a href="https://api.loyal9.app" style="color: #667eea; font-weight: bold;">api.loyal9.app</a>.</p>
+            <p>The Cannabis Intelligence Database is now deployed as a <strong>production REST API</strong> with <strong>15,740 unique strains</strong> from 200+ professional breeders with <strong>8,792 AI-extracted data points</strong>. This represents the first multi-breeder cannabis genetics API with breeder-specific cultivation data available at <a href="https://api.loyal9.app" style="color: #667eea; font-weight: bold;">api.loyal9.app</a>.</p>
             <p style="margin-top: 15px; padding: 15px; background: #e8f5e8; border-radius: 8px; border-left: 4px solid #4CAF50;"><strong>🏆 Methodology Breakthrough:</strong> Achieved <strong>100% success rate</strong> on North Atlantic Seed Company re-scrape using 4-method extraction approach, collecting 3,047 strains with zero failures.</p>
 
             <div class="stats-grid">
                 <div class="stat-card">
-                    <span class="stat-number">15,768</span>
+                    <span class="stat-number">15,740</span>
                     <span class="stat-label">Unique Strains</span>
                 </div>
                 <div class="stat-card">
@@ -464,10 +466,10 @@
               data: null,
               defaultContent: 'N/A',
               render: function(data, type, row) {
-                if (row.genetics_sativa && row.genetics_indica) {
-                  return `${row.genetics_sativa}% S / ${row.genetics_indica}% I`;
+                if (row.sativa_percentage && row.indica_percentage) {
+                  return `${row.sativa_percentage}% S / ${row.indica_percentage}% I`;
                 }
-                return row.type || 'N/A';
+                return row.seed_gender || 'N/A';
               }
             },
             { 
@@ -477,7 +479,7 @@
                 if (row.thc_min && row.thc_max) {
                   return `${row.thc_min}-${row.thc_max}%`;
                 }
-                return row.thc_content || 'N/A';
+                return row.thc_min || 'N/A';
               }
             },
             { 
@@ -487,24 +489,31 @@
                 if (row.cbd_min && row.cbd_max) {
                   return `${row.cbd_min}-${row.cbd_max}%`;
                 }
-                return row.cbd_content || 'N/A';
+                return row.cbd_min || 'N/A';
               }
             },
             { 
               data: null,
               defaultContent: 'N/A',
               render: function(data, type, row) {
-                if (row.flowering_days_indoor) {
-                  return `${row.flowering_days_indoor} days`;
+                if (row.flowering_time_min && row.flowering_time_max) {
+                  return `${row.flowering_time_min}-${row.flowering_time_max} days`;
                 }
-                return row.flowering_time || 'N/A';
+                return row.flowering_behavior || 'N/A';
               }
             },
-            { data: 'difficulty_rating', defaultContent: 'N/A' },
-            { data: 'effects_primary', defaultContent: 'N/A' }
+            { data: 'grow_difficulty', defaultContent: 'N/A' },
+            { data: 'effects', defaultContent: 'N/A' },
+            { data: 'flavors', defaultContent: 'N/A' },
+            { data: 'flowering_behavior', defaultContent: 'N/A' },
+            { data: 'yield_units', defaultContent: 'N/A' },
+            { data: 'height_indoor', defaultContent: 'N/A' }
           ],
           pageLength: 5,
-          order: [[0, 'asc']]
+          lengthMenu: [[25, 50, 100, 250, -1], [25, 50, 100, 250, "All"]],
+          order: [[0, 'asc']],
+          scrollX: true,
+          responsive: true
         });
 
         $('#searchInput').on('keyup', function() {

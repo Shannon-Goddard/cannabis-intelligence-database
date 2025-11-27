@@ -5,7 +5,7 @@
 [![API Status](https://img.shields.io/badge/API-LIVE-brightgreen.svg)](https://api.loyal9.app)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.12+](https://img.shields.io/badge/python-3.12+-blue.svg)](https://www.python.org/downloads/)
-[![Total Strains](https://img.shields.io/badge/Total%20Strains-15768-brightgreen.svg)](https://api.loyal9.app/v1/stats)
+[![Total Strains](https://img.shields.io/badge/Total%20Strains-15740-brightgreen.svg)](https://api.loyal9.app/v1/stats)
 [![Data Points](https://img.shields.io/badge/AI%20Extracted-8792%20Data%20Points-gold.svg)](https://api.loyal9.app/v1/stats)
 [![Milestone](https://img.shields.io/badge/Milestone-10000%2B%20CRUSHED-gold.svg)](https://api.loyal9.app/v1/stats)
 
@@ -15,7 +15,7 @@
 
 ## 🏆 LEGENDARY DATABASE ACHIEVEMENT
 
-**15,768 cannabis strains** with **8,792 AI-extracted data points** from rich strain descriptions, making this the **world's most comprehensive cannabis genetics database** with professional-grade cultivation intelligence.
+**15,740 cannabis strains** with **8,792 AI-extracted data points** from rich strain descriptions, making this the **world's most comprehensive cannabis genetics database** with professional-grade cultivation intelligence.
 
 ### 🚀 AI Intelligence Extraction Results
 
@@ -31,13 +31,21 @@ Our breakthrough AI extraction system processed **14,300 rich strain description
 
 **Total Enhancement**: **8,792 new data points** extracted from unstructured text using advanced pattern matching and natural language processing.
 
-## 🌐 Live Production API
+## 🌐 Live Production API & Data Access
 
 **Base URL**: `https://api.loyal9.app`  
 **Live Demo**: [https://shannon-goddard.github.io/cannabis-intelligence-database/](https://shannon-goddard.github.io/cannabis-intelligence-database/)  
-**Download CSV**: [Cannabis_Intelligence_Database_15768_Strains_Final.csv](data/Cannabis_Intelligence_Database_15768_Strains_Final.csv)
+**Download CSV**: [LEGENDARY_Cannabis_Intelligence_Database_15778_Strains_AI_Enhanced.csv](https://github.com/Shannon-Goddard/cannabis-intelligence-database/raw/main/data/LEGENDARY_Cannabis_Intelligence_Database_15778_Strains_AI_Enhanced.csv)  
+**GitHub Pages**: [Interactive Database Browser](https://shannon-goddard.github.io/cannabis-intelligence-database/)
 
 The Cannabis Intelligence Database is deployed as a production REST API with **15,768 unique strains** from **200+ professional breeders** with AI-enhanced cultivation data.
+
+### 📊 Data Access Options
+
+1. **Live API**: Real-time access via REST endpoints at `api.loyal9.app`
+2. **CSV Download**: Complete dataset in CSV format for offline analysis
+3. **Interactive Browser**: GitHub Pages with searchable, filterable table
+4. **Raw Data**: Direct access to JSON data via API endpoints
 
 ### Quick API Access
 
@@ -171,16 +179,35 @@ Our AI extraction system uses sophisticated regex patterns to mine cultivation i
 
 ## 🚀 Quick Start
 
+### Option 1: Use Live API
 ```bash
-# Clone repository
-git clone https://github.com/Shannon-Goddard/cannabis-intelligence-database.git
-cd cannabis-intelligence-database
-
 # Test AI-enhanced API
 curl https://api.loyal9.app/v1/stats
 
 # Search for AI-extracted THC data
 curl "https://api.loyal9.app/v1/search?q=thc"
+
+# Get all strains (paginated)
+curl https://api.loyal9.app/v1/strains
+```
+
+### Option 2: Download CSV Data
+```bash
+# Download complete dataset
+wget https://github.com/Shannon-Goddard/cannabis-intelligence-database/raw/main/data/LEGENDARY_Cannabis_Intelligence_Database_15778_Strains_AI_Enhanced.csv
+
+# Or use curl
+curl -L -o cannabis_strains.csv https://github.com/Shannon-Goddard/cannabis-intelligence-database/raw/main/data/LEGENDARY_Cannabis_Intelligence_Database_15778_Strains_AI_Enhanced.csv
+```
+
+### Option 3: Browse Interactively
+Visit [https://shannon-goddard.github.io/cannabis-intelligence-database/](https://shannon-goddard.github.io/cannabis-intelligence-database/) for a searchable, filterable interface with all 15,768 strains.
+
+### Option 4: Clone Repository
+```bash
+# Clone repository for development
+git clone https://github.com/Shannon-Goddard/cannabis-intelligence-database.git
+cd cannabis-intelligence-database
 ```
 
 ## 🤝 Contributing
