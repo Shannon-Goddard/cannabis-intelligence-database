@@ -1,6 +1,6 @@
 {
-  "title": "Cannabis Intelligence Database: Production API & Multi-Breeder Repository",
-  "description": "Production cannabis genetics REST API with 2,341 verified strains from 73 professional breeders. Live API at api.loyal9.app provides breeder-specific cultivation data including THC/CBD levels, genetics, flowering time, effects, and difficulty ratings. Built on AWS serverless architecture with sub-500ms response times.",
+  "title": "Cannabis Intelligence Database: AI-Enhanced Multi-Breeder Genetics Repository",
+  "description": "World's largest cannabis genetics database with 15,778 strains and 8,792 AI-extracted data points from 200+ professional breeders. Features advanced pattern recognition for THC/CBD extraction, genetic ratio analysis, and cultivation intelligence mining from strain descriptions. Production REST API at api.loyal9.app with sub-500ms response times on AWS serverless architecture.",
   "creators": [
     {
       "name": "Amazon Q."
@@ -14,6 +14,9 @@
     "genetics", 
     "cultivation",
     "database",
+    "artificial intelligence",
+    "data extraction",
+    "pattern recognition",
     "multi-breeder",
     "research",
     "dataset",
@@ -21,10 +24,13 @@
     "botany",
     "REST API",
     "production",
-    "AWS serverless"
+    "AWS serverless",
+    "machine learning",
+    "natural language processing"
   ],
   "license": "MIT",
   "upload_type": "dataset",
   "access_right": "open",
-  "language": "eng"
+  "language": "eng",
+  "version": "2.0.0"
 }

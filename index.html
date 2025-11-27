@@ -241,7 +241,7 @@
     <div class="container">
         <header class="header">
             <h1>🌿 Cannabis Intelligence Database</h1>
-            <p class="subtitle">15,779+ Unique Strains | 10,000+ Milestone CRUSHED | 99.5% Success Rate</p>
+            <p class="subtitle">15,768 Unique Strains | 10,000+ Milestone CRUSHED | AI-Enhanced Data</p>
             
             <div class="badges">
                 <a href="https://doi.org/10.5281/zenodo.17645958" class="badge">📚 DOI: 10.5281/zenodo.17645958</a>
@@ -274,10 +274,10 @@
         <tr>
           <th>Strain Name</th>
           <th>Breeder</th>
-          <th>Type</th>
+          <th>Genetics</th>
           <th>THC %</th>
           <th>CBD %</th>
-          <th>Flowering (days)</th>
+          <th>Flowering</th>
           <th>Difficulty</th>
           <th>Effects</th>
         </tr>
@@ -297,12 +297,12 @@
 
         <main class="main-content">
             <h2>🎯 Research Overview</h2>
-            <p>The Cannabis Intelligence Database is now deployed as a <strong>production REST API</strong> with <strong>15,779+ unique strains</strong> from 200+ professional breeders. This represents the first multi-breeder cannabis genetics API with breeder-specific cultivation data available at <a href="https://api.loyal9.app" style="color: #667eea; font-weight: bold;">api.loyal9.app</a>.</p>
+            <p>The Cannabis Intelligence Database is now deployed as a <strong>production REST API</strong> with <strong>15,768 unique strains</strong> from 200+ professional breeders with <strong>8,792 AI-extracted data points</strong>. This represents the first multi-breeder cannabis genetics API with breeder-specific cultivation data available at <a href="https://api.loyal9.app" style="color: #667eea; font-weight: bold;">api.loyal9.app</a>.</p>
             <p style="margin-top: 15px; padding: 15px; background: #e8f5e8; border-radius: 8px; border-left: 4px solid #4CAF50;"><strong>🏆 Methodology Breakthrough:</strong> Achieved <strong>100% success rate</strong> on North Atlantic Seed Company re-scrape using 4-method extraction approach, collecting 3,047 strains with zero failures.</p>
 
             <div class="stats-grid">
                 <div class="stat-card">
-                    <span class="stat-number">15,779+</span>
+                    <span class="stat-number">15,768</span>
                     <span class="stat-label">Unique Strains</span>
                 </div>
                 <div class="stat-card">
@@ -460,12 +460,48 @@
           columns: [
             { data: 'strain_name', defaultContent: 'N/A' },
             { data: 'breeder_name', defaultContent: 'Unknown' },
-            { data: 'type', defaultContent: 'N/A' },
-            { data: 'thc_content', defaultContent: 'N/A' },
-            { data: 'cbd_content', defaultContent: 'N/A' },
-            { data: 'flowering_time', defaultContent: 'N/A' },
-            { data: 'difficulty', defaultContent: 'N/A' },
-            { data: 'effects', defaultContent: 'N/A' }
+            { 
+              data: null,
+              defaultContent: 'N/A',
+              render: function(data, type, row) {
+                if (row.genetics_sativa && row.genetics_indica) {
+                  return `${row.genetics_sativa}% S / ${row.genetics_indica}% I`;
+                }
+                return row.type || 'N/A';
+              }
+            },
+            { 
+              data: null,
+              defaultContent: 'N/A',
+              render: function(data, type, row) {
+                if (row.thc_min && row.thc_max) {
+                  return `${row.thc_min}-${row.thc_max}%`;
+                }
+                return row.thc_content || 'N/A';
+              }
+            },
+            { 
+              data: null,
+              defaultContent: 'N/A',
+              render: function(data, type, row) {
+                if (row.cbd_min && row.cbd_max) {
+                  return `${row.cbd_min}-${row.cbd_max}%`;
+                }
+                return row.cbd_content || 'N/A';
+              }
+            },
+            { 
+              data: null,
+              defaultContent: 'N/A',
+              render: function(data, type, row) {
+                if (row.flowering_days_indoor) {
+                  return `${row.flowering_days_indoor} days`;
+                }
+                return row.flowering_time || 'N/A';
+              }
+            },
+            { data: 'difficulty_rating', defaultContent: 'N/A' },
+            { data: 'effects_primary', defaultContent: 'N/A' }
           ],
           pageLength: 5,
           order: [[0, 'asc']]
