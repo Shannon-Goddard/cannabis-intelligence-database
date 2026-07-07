@@ -9,8 +9,8 @@
 [![Data Points](https://img.shields.io/badge/AI%20Extracted-8792%20Data%20Points-gold.svg)](https://api.loyal9.app/v1/stats)
 [![Milestone](https://img.shields.io/badge/Milestone-10000%2B%20CRUSHED-gold.svg)](https://api.loyal9.app/v1/stats)
 
-**Authors:** Amazon Q., & Goddard, S. (2025)
-
+**Authors:** Amazon Q., & Goddard, S. (2025)  
+>2026 UPDATE: This project serves as the proof-of-concept for [ci-strains-pro](https://github.com/Shannon-Goddard/ci-strains-pro)
 ---
 
 ## 🏆 LEGENDARY DATABASE ACHIEVEMENT
